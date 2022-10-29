@@ -101,7 +101,7 @@ def logo_menu():
 ###----------[ MENU LOGIN ]----------###	
 def login():
 	os.system("clear")
-	cetak(nel(f'   {P2}Hi! Sepertinya Kamu Adalah Pengguna Baru. Terima Kasih Telah Memilih Tools Ini Sebagai Pilihan Terpercayamu. Sebelum Menggunakan Tools Ini, Kamu Harus Login Terlebih Dahulu! Jangan Lupa Berikan Penilaian Terbaik Di Github Ya! Thank You!\n\n                {H2}- M A M U N -',title=f'{P2} {H2}[ {P2}Welcome User {H2}]',width=54,padding=(1,4),style='green'))
+	cetak(nel(f'   {P2}Hi! Looks like you are a new user.  Thank you for choosing this tool as your trusted choice.  Before Using These Tools, You Must Login First!  Don't Forget To Give The Best Rating On Github Yes! Thank You!\n\n                {H2}- M A M U N -',title=f'{P2} {H2}[ {P2}Welcome User {H2}]',width=54,padding=(1,4),style='green'))
 	cetak(nel(f'{P2} Input Cookie !\n Cookie Capture Extension Suggestion : {H2}Cookiedough',subtitle=f'{P2}┌─[ Input Cookie ]]',subtitle_align='left',width=54,padding=1,style='green'))
 	cookie = input(f"{P}   └──> : {H}")
 	try:
