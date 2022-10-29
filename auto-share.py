@@ -102,14 +102,14 @@ def logo_menu():
 def login():
 	os.system("clear")
 	cetak(nel(f'   {P2}Hi! Sepertinya Kamu Adalah Pengguna Baru. Terima Kasih Telah Memilih Tools Ini Sebagai Pilihan Terpercayamu. Sebelum Menggunakan Tools Ini, Kamu Harus Login Terlebih Dahulu! Jangan Lupa Berikan Penilaian Terbaik Di Github Ya! Thank You!\n\n                {H2}- M A M U N -',title=f'{P2} {H2}[ {P2}Welcome User {H2}]',width=54,padding=(1,4),style='green'))
-	cetak(nel(f'{P2} Masukan Cookie !\n Cookie Capture Extension Suggestion : {H2}Cookiedough',subtitle=f'{P2}┌─[ Input Cookie ]]',subtitle_align='left',width=54,padding=1,style='green'))
+	cetak(nel(f'{P2} Input Cookie !\n Cookie Capture Extension Suggestion : {H2}Cookiedough',subtitle=f'{P2}┌─[ Input Cookie ]]',subtitle_align='left',width=54,padding=1,style='green'))
 	cookie = input(f"{P}   └──> : {H}")
 	try:
 		data = ses.get("https://business.facebook.com/business_locations", headers = {"user-agent": "Mozilla/5.0 (Linux; Android 8.1.0; MI 8 Build/OPM1.171019.011) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.86 Mobile Safari/537.36","referer": "https://www.facebook.com/","host": "business.facebook.com","origin": "https://business.facebook.com","upgrade-insecure-requests" : "1","accept-language": "id-ID,id;q=0.9,en-US;q=0.8,en;q=0.7","cache-control": "max-age=0","accept":"text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8","content-type":"text/html; charset=utf-8"}, cookies = {"cookie":cookie})
 		find_token = re.search("(EAAG\w+)", data.text)
 		open("token.txt", "w").write(find_token.group(1))
 		open("cookie.txt", "w").write(cookie)
-		cetak(nel(f'{P2} LOGIN BERHASIL !',width=24,style=f"#00FF00"));time.sleep(2)
+		cetak(nel(f'{P2} LOGIN SUCCESSFUL !',width=24,style=f"#00FF00"));time.sleep(2)
 		bot_share()
 	except:
 		os.system("rm token.txt cookie.txt")
@@ -136,16 +136,16 @@ def bot_share():
 		login()
 	os.system('clear')
 	logo_menu()
-	cetak(nel(f'''{P2} User Active     : {H2}{nama} 
+	cetak(nel(f'''{P2} User Active     : {H2}{no} 
 {P2} You Idz         : {id}
 {P2} You Ip          : {ip}
 {P2} Current Date    : {hari}, {tanggal}''',title=f'{P2} {H2}[ {P2}User Information {H2}]',subtitle_align='left',padding=1,style='green'))
 	cetak(nel(f'{P2}Hi {H2}{nama}{P2}, copy the link to the public post, it must be from facebook lite, otherwise there will be an error when the bot share process is running.',title=f'{P2} {H2}[ {P2}Note {H2}]',subtitle_align='left',padding=1,style='green'))
-	cetak(nel(f'{P2} MASUKAN LINK POST PUBLIK',subtitle=f'{P2}┌─',subtitle_align='left',width=25,padding=0,style='green'))
+	cetak(nel(f'{P2} INPUT LINK POST PUBLIC',subtitle=f'{P2}┌─',subtitle_align='left',width=25,padding=0,style='green'))
 	link = input(f"{P}   └──> : {H}")
-	cetak(nel(f'{P2} MASUKAN JUMLAH SHARE',subtitle=f'{P2}┌─',subtitle_align='left',width=22,padding=0,style='green'))
+	cetak(nel(f'{P2} INPUT AMOUNT SHARE',subtitle=f'{P2}┌─',subtitle_align='left',width=22,padding=0,style='green'))
 	jumlah = int(input(f"{P}   └──> : {H}"))
-	cetak(nel(f'{P2} AUTO SHARE SEDANG BERJALAN',subtitle=f'{P2}┌─',subtitle_align='left',width=29,padding=0,style='green'))
+	cetak(nel(f'{P2} AUTO SHARE ONGOING',subtitle=f'{P2}┌─',subtitle_align='left',width=29,padding=0,style='green'))
 	RianGantengBanget = datetime.now()
 	try:
 		n = 0
@@ -163,4 +163,4 @@ def bot_share():
 	except requests.exceptions.ConnectionError:
 		print(f"\n{P}(!) Anda tidak terhubung ke internet!");exit()
 
-bot_share()
+    bot_share()
